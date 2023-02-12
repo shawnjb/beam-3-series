@@ -1,0 +1,1 @@
+{"BMW3F3016_steer":{"information":{"authors":"MMBNG","name":"Steering Wheel","value":600},"slotType":"BMW3F3016_steer","props":[["func","mesh","idRef:","idX:","idY:","baseRotation","rotation","translation","min","max","offset","multiplier"],["steering","BMW3F3016_steer","f1l","f1r","f6l",{"x":-70,"y":0,"z":180},{"x":0,"y":0,"z":1},{"x":0,"y":0,"z":0},-1000,1000,0,1]]}}

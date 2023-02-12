@@ -1,0 +1,33 @@
+{
+"bindings" :   [
+    {
+    "control"           : "ctrl y"          , 
+    "action"            : "low_FrideHeight"         
+    }, 
+    {
+    "control"           : "y"          , 
+    "action"            : "med_FrideHeight"         
+    }, 
+    {
+    "control"           : "shift y"          , 
+    "action"            : "high_FrideHeight"         
+    }, 
+    {
+    "control"           : "ctrl g"          , 
+    "action"            : "low_RrideHeight"         
+    }, 
+    {
+    "control"           : "g"          , 
+    "action"            : "med_RrideHeight"         
+    }, 
+    {
+    "control"           : "shift g"          , 
+    "action"            : "high_RrideHeight"         
+    }, 
+  ], 
+"name"              : "Keyboard"          , 
+"version"           : 1                   , 
+"devicetype"        : "keyboard"          , 
+"vidpid"            : "6F1F2B62"          , 
+"guid"              : "{6F1F2B62-D5A0-11CF-BFC7-444553540000}"
+}, 

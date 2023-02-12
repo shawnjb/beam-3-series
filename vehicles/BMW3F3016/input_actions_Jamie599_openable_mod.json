@@ -1,0 +1,8 @@
+{
+"toggle_Trunk":{"order":  1,  "onUp":"electrics.values.trunk = 1-(electrics.values.trunk or 0) OpenPart('t3ll', 'r7ll', 0, electrics.values.trunk) OpenPart('t3rr', 'r7rr', 0, electrics.values.trunk)", "title": "Trunk", "desc": "Opens/closes the trunk" },
+"toggle_Hood":{"order":  2,  "onUp":"electrics.values.hood = 1-(electrics.values.hood or 0) OpenPart('h4ll', 'f13ll', 0, electrics.values.hood) OpenPart('h4rr', 'f13rr', 0, electrics.values.hood)", "title": "Hood", "desc": "Opens/closes the hood" },
+"toggle_FLDoor":{"order":  3,  "onUp":"electrics.values.doorFL = 1-(electrics.values.doorFL or 0) OpenPart('d9l', 'f3l', 0, electrics.values.doorFL)", "title": "Front Left Door", "desc": "Opens/closes the front left door" },
+"toggle_FRDoor":{"order":  4,  "onUp":"electrics.values.doorFR = 1-(electrics.values.doorFR or 0) OpenPart('d9r', 'f3r', 0, electrics.values.doorFR)", "title": "Front Right Door", "desc": "Opens/closes the front right door" },
+"toggle_RLDoor":{"order":  5,  "onUp":"electrics.values.doorRL = 1-(electrics.values.doorRL or 0) OpenPart('d21l', 'f4l', 0, electrics.values.doorRL)", "title": "Rear Left Door", "desc": "Opens/closes the rear left door" },
+"toggle_RRDoor":{"order":  6,  "onUp":"electrics.values.doorRR = 1-(electrics.values.doorRR or 0) OpenPart('d21r', 'f4r', 0, electrics.values.doorRR)", "title": "Rear Right Door", "desc": "Opens/closes rear the right door" },
+}

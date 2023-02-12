@@ -1,0 +1,512 @@
+{
+"BMW3F3016_windshield_GT": {
+    "information":{
+        "authors":"MMBNG",
+        "name":"Windshield",
+        "value":600,
+    },
+    "slotType" : "BMW3F3016_windshield_GT",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //glass
+         {"deformGroup":"windshield_break", "deformMaterialBase":"BMW3F3016_glass", "deformMaterialDamaged":"BMW3F3016_windshield_dmg"},
+         ["BMW3F3016_windshield_GT", ["BMW3F3016_windshield"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>impact_glass_windscreen_01", "deformVolume":0.7}],
+
+         {"deformGroup":"windshield_break", "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_mirror"},
+         {"deformGroup":""},
+		 
+         ["BMW3F3016_Wipers", ["BMW3F3016_windshield"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_GLASS"},
+         {"nodeWeight":2.0},
+         {"group":"BMW3F3016_windshield"},
+         ["wi1", 0.00000, -0.49259, 1.14129{"group":["BMW3F3016_windshield","gps"]}],
+         {"group":""},
+
+         {"nodeMaterial":"|NM_METAL"},
+
+         //--ADD WEIGHT--
+
+         //windshield
+         //a pillar
+         {"nodeWeight":2.5},
+         {"group":"BMW3F3016_body"},
+         ["p1r", -0.62000, -0.42000, 1.16000, {"group":["BMW3F3016_body","BMW3F3016_windshield"]}],
+         ["p1l", 0.62000, -0.42000, 1.16000, {"group":["BMW3F3016_body","BMW3F3016_windshield"]}],
+         //roof
+         {"nodeWeight":3.2},
+         ["rf1r", -0.59500, -0.03000, 1.32000, {"group":["BMW3F3016_body","BMW3F3016_windshield","BMW3F3016_roof"]}],
+         ["rf1", 0.00000, -0.19997, 1.35910, {"nodeWeight":2.7,"group":["BMW3F3016_body","BMW3F3016_windshield","BMW3F3016_roof"]}],
+         ["rf1l", 0.59500, -0.03000, 1.32000, {"group":["BMW3F3016_body","BMW3F3016_windshield","BMW3F3016_roof"]}],
+         //firewall
+         {"nodeWeight":8.4},
+         ["f6rr", -0.78000, -0.73786, 0.88175, {"group":["BMW3F3016_engine_bay","gps","BMW3F3016_windshield","BMW3F3016_body","BMW3F3016_dash"]}],
+         ["f6r", -0.33000, -0.90786, 0.91175, {"group":["BMW3F3016_engine_bay","gps","BMW3F3016_windshield","BMW3F3016_body","BMW3F3016_strutbar","BMW3F3016_dash"]}],
+         ["f6l", 0.33000, -0.90786, 0.91175, {"group":["BMW3F3016_engine_bay","gps","BMW3F3016_windshield","BMW3F3016_body","BMW3F3016_strutbar","BMW3F3016_dash"]}],
+         ["f6ll", 0.78000, -0.73786, 0.88175, {"group":["BMW3F3016_engine_bay","gps","BMW3F3016_windshield","BMW3F3016_body","BMW3F3016_dash"]}],
+
+         //windshield 12kg, rear window 10kg, coupe window 4kg, sedan window 3kg
+         //1568kg
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamSpring":1470600,"beamDamp":120},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //weak windshield beams
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"beamDeform":10500,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"windshield_break","deformationTriggerRatio":0.02},
+          {"deformLimitExpansion":""},
+
+          ["rf1","wi1"],
+          ["rf1r","wi1"],
+          ["rf1l","wi1"],
+          ["wi1","f6r"],
+          ["wi1","f6l"],
+          ["wi1","p1r"],
+          ["wi1","p1l"],
+          ["wi1","f6rr"],
+          ["wi1","f6ll"],
+
+          ["wi1","p2rr"],
+          ["wi1","p2ll"],
+
+          {"beamDeform":7500,"beamStrength":17500},
+          ["rf1","f6r"],
+          ["rf1","f6l"],
+
+          ["p1r","p1l"],
+
+          ["rf1r","f6r"],
+          ["rf1l","f6l"],
+          {"breakGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"deformGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+
+    ],
+},
+"BMW3F3016_doorglass_FR_GT": {
+    "information":{
+        "authors":"MMBNG",
+        "name":"Front Right Door Glass",
+        "value":60,
+    },
+    "slotType" : "BMW3F3016_doorglass_FR_GT",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"doorglass_FR_break", "deformMaterialBase":"BMW3F3016_glass", "deformMaterialDamaged":"BMW3F3016_glass_dmg"},
+         ["BMW3F3016_doorglass_FR_GT", ["BMW3F3016_door_FR"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound5", "deformVolume":0.7}],
+         {"deformGroup":""},
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--DOOR--
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"selfCollision":true},
+         {"collision":true},
+         {"group":"BMW3F3016_door_FR"},
+         {"nodeWeight":1.8},
+         ["d10r", -0.73000, -0.27000, 1.16000],
+         ["d11r", -0.65000, -0.01000, 1.29000],
+         ["d12r", -0.63000, 0.42000, 1.33000],
+         ["d13r", -0.74000, 0.37000, 1.14000],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+          //brittle glass beams
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"deformGroup":"doorglass_FR_break", "deformationTriggerRatio":0.02},
+          {"beamSpring":1401000,"beamDamp":90},
+          {"beamDeform":8000,"beamStrength":7000},
+          {"breakGroup":"doorglass_FR"},
+          {"deformLimitExpansion":""},
+          ["d11r","d8r"],
+          ["d12r","d8r"],
+          ["d10r","d13r"],
+          ["d10r","d9r"],
+          ["d13r","d7r"],
+          ["d9r","d11r"],
+          ["d7r","d11r"],
+          ["d9r","d12r"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"deformLimitExpansion":1.1},
+    ],
+},
+"BMW3F3016_doorglass_FL_GT": {
+    "information":{
+        "authors":"MMBNG",
+        "name":"Front Left Door Glass",
+        "value":60,
+    },
+    "slotType" : "BMW3F3016_doorglass_FL_GT",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"doorglass_FL_break", "deformMaterialBase":"BMW3F3016_glass", "deformMaterialDamaged":"BMW3F3016_glass_dmg"},
+         ["BMW3F3016_doorglass_FL_GT", ["BMW3F3016_door_FL"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound6", "deformVolume":0.7}],
+         {"deformGroup":""},
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--DOOR--
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"selfCollision":true},
+         {"collision":true},
+         {"group":"BMW3F3016_door_FL"},
+         {"nodeWeight":1.8},
+         ["d10l", 0.73000, -0.27000, 1.16000],
+         ["d11l", 0.65000, -0.01000, 1.29000],
+         ["d12l", 0.63000, 0.42000, 1.33000],
+         ["d13l", 0.74000, 0.37000, 1.14000],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+          //brittle glass beams
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"deformGroup":"doorglass_FL_break", "deformationTriggerRatio":0.02},
+          {"beamSpring":1401000,"beamDamp":90},
+          {"beamDeform":8000,"beamStrength":7000},
+          {"breakGroup":"doorglass_FL"},
+          {"deformLimitExpansion":""},
+          ["d11l","d8l"],
+          ["d12l","d8l"],
+          ["d10l","d13l"],
+          ["d10l","d9l"],
+          ["d13l","d7l"],
+          ["d9l","d11l"],
+          ["d7l","d11l"],
+          ["d9l","d12l"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"deformLimitExpansion":1.1},
+    ],
+},
+"BMW3F3016_sideglass_R_GT": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Right Quarter Glass",
+        "value":100,
+    },
+    "slotType" : "BMW3F3016_sideglass_R_GT",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"sideglass_R_break", "deformMaterialBase":"BMW3F3016_glass", "deformMaterialDamaged":"BMW3F3016_glass_dmg"},
+         ["BMW3F3016_sideglass_R_GT", ["BMW3F3016_body"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound6", "deformVolume":0.7}],
+         {"deformGroup":""},
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+
+         //--ADD WEIGHT--
+         {"group":"BMW3F3016_body"},
+
+         //rear quarter windows
+         //c pillar
+         {"nodeWeight":1.8},
+         ["p10r", -0.72371, 1.50434, 1.20974],
+         //d pillar
+         {"nodeWeight":3.1},
+         ["p11r", -0.72834, 1.94552, 1.11784],
+         //roof
+         {"nodeWeight":2.3},
+         ["rf4r", -0.58495, 1.33434, 1.42340, {"group":["BMW3F3016_body","BMW3F3016_roof"]}],
+         ["rf5r", -0.54914, 1.44077, 1.43596, {"group":["BMW3F3016_body","BMW3F3016_roof"]}],
+         ["rf6r", -0.55735, 1.76230, 1.40785, {"group":["BMW3F3016_body","BMW3F3016_roof"]}],
+         //quarter panel
+         {"nodeWeight":2.2},
+         {"group":"BMW3F3016_body"},
+         ["q1r", -0.81234, 1.45434, 1.02814, {"group":["BMW3F3016_body","BMW3F3016_seat_R"]}],
+
+         //windshield 12kg, rear window 10kg, coupe window 4kg, sedan window 3kg
+         //1568kg
+
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamSpring":1470600,"beamDamp":120},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //brittle glass beams
+          {"beamSpring":1350600,"beamDamp":60},
+          //side glass
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"beamDeform":4800,"beamStrength":8800},
+          {"deformGroup":"sideglass_R_break", "deformationTriggerRatio":0.03},
+          {"breakGroup":"sideglass_R"},
+          ["rf5r","q2r"],
+          ["rf5r","q1r"],
+          ["q1r","p11r"],
+          ["p11r","p10r"],
+          ["p11r","rf4r"],
+          ["rf6r","q1r"],
+          {"breakGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"deformGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+
+    ],
+},
+"BMW3F3016_sideglass_L_GT": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Left Quarter Glass",
+        "value":100,
+    },
+    "slotType" : "BMW3F3016_sideglass_L_GT",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"sideglass_L_break", "deformMaterialBase":"BMW3F3016_glass", "deformMaterialDamaged":"BMW3F3016_glass_dmg"},
+         ["BMW3F3016_sideglass_L_GT", ["BMW3F3016_body"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound6", "deformVolume":0.7}],
+         {"deformGroup":""},
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+
+         //--ADD WEIGHT--
+         {"group":"BMW3F3016_body"},
+
+         //rear quarter windows
+         //c pillar
+         {"nodeWeight":1.8},
+         ["p10l", 0.72371, 1.50434, 1.20974],
+         //d pillar
+         {"nodeWeight":3.1},
+         ["p11l", 0.72834, 1.94552, 1.11784],
+         //roof
+         {"nodeWeight":2.3},
+         ["rf4l", 0.58495, 1.33434, 1.42340, {"group":["BMW3F3016_body","BMW3F3016_roof"]}],
+         ["rf5l", 0.54914, 1.44077, 1.43596, {"group":["BMW3F3016_body","BMW3F3016_roof"]}],
+         ["rf6l", 0.55735, 1.76230, 1.40785, {"group":["BMW3F3016_body","BMW3F3016_roof"]}],
+         //quarter panel
+         {"nodeWeight":2.2},
+         {"group":"BMW3F3016_body"},
+         ["q1l", 0.81234, 1.45434, 1.02814, {"group":["BMW3F3016_body","BMW3F3016_seat_R"]}],
+
+         //windshield 12kg, rear window 10kg, coupe window 4kg, sedan window 3kg
+         //1568kg
+
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamSpring":1470600,"beamDamp":120},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //brittle glass beams
+          {"beamSpring":1350600,"beamDamp":60},
+          //side glass
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"beamDeform":4800,"beamStrength":8800},
+          {"deformGroup":"sideglass_L_break", "deformationTriggerRatio":0.03},
+          {"breakGroup":"sideglass_L"},
+          ["rf5l","q2l"],
+          ["rf5l","q1l"],
+          ["q1l","p11l"],
+          ["p11l","p10l"],
+          ["p11l","rf4l"],
+          ["rf6l","q1l"],
+          {"breakGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"deformGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+
+    ],
+},
+"BMW3F3016_doorglass_RR_GT": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Right Door Glass",
+        "value":60,
+    },
+    "slotType" : "BMW3F3016_doorglass_RR_GT",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"doorglass_RR_break", "deformMaterialBase":"BMW3F3016_glass", "deformMaterialDamaged":"BMW3F3016_glass_dmg"},
+         ["BMW3F3016_doorglass_RR_GT", ["BMW3F3016_door_RR"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound7", "deformVolume":0.7}],
+         {"deformGroup":""},
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //rear right door
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"selfCollision":true},
+         {"collision":true},
+         {"group":"BMW3F3016_door_RR"},
+         {"nodeWeight":1.7},
+         ["d22r", -0.74000, 0.40000, 1.14000],
+         ["d23r", -0.63000, 0.45000, 1.33000],
+         ["d24r", -0.62000, 0.74000, 1.36830],
+         ["d25r", -0.67180, 1.26151, 1.37594],
+         ["d26r", -0.75112, 1.27973, 1.16000],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+          //brittle glass beams
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"deformGroup":"doorglass_RR_break", "deformationTriggerRatio":0.02},
+          {"beamSpring":1401000,"beamDamp":90},
+          {"beamDeform":8000,"beamStrength":7000},
+          {"breakGroup":"doorglass_RR"},
+          {"deformLimitExpansion":""},
+          ["d22r","d21r"],
+          ["d22r","d25r"],
+          ["d24r","d20r"],
+          ["d25r","d20r"],
+          ["d23r","d20r"],
+          ["d24r","d19r"],
+          ["d21r","d24r"],
+          ["d26r","d23r"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"deformLimitExpansion":1.1},
+    ],
+},
+"BMW3F3016_doorglass_RL_GT": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Left Door Glass",
+        "value":60,
+    },
+    "slotType" : "BMW3F3016_doorglass_RL_GT",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"doorglass_RL_break", "deformMaterialBase":"BMW3F3016_glass", "deformMaterialDamaged":"BMW3F3016_glass_dmg"},
+         ["BMW3F3016_doorglass_RL_GT", ["BMW3F3016_door_RL"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound8", "deformVolume":0.7}],
+         {"deformGroup":""},
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //rear right door
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"selfCollision":true},
+         {"collision":true},
+         {"group":"BMW3F3016_door_RL"},
+         {"nodeWeight":1.7},
+         ["d22l", 0.74000, 0.40000, 1.14000],
+         ["d23l", 0.63000, 0.45000, 1.33000],
+         ["d24l", 0.62000, 0.74000, 1.36830],
+         ["d25l", 0.67180, 1.26151, 1.37594],
+         ["d26l", 0.75112, 1.27973, 1.16000],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+          //brittle glass beams
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"deformGroup":"doorglass_RL_break", "deformationTriggerRatio":0.02},
+          {"beamSpring":1401000,"beamDamp":90},
+          {"beamDeform":8000,"beamStrength":7000},
+          {"breakGroup":"doorglass_RL"},
+          {"deformLimitExpansion":""},
+          ["d22l","d21l"],
+          ["d22l","d25l"],
+          ["d24l","d20l"],
+          ["d25l","d20l"],
+          ["d23l","d20l"],
+          ["d24l","d19l"],
+          ["d21l","d24l"],
+          ["d26l","d23l"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"deformLimitExpansion":1.1},
+    ],
+},
+"BMW3F3016_tailgateglass_GT": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Tailgate Glass",
+        "value":120,
+    },
+    "slotType" : "BMW3F3016_tailgateglass_GT",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"tailgateglass_break", "deformMaterialBase":"BMW3F3016_glass", "deformMaterialDamaged":"BMW3F3016_glass_dmg"},
+         ["BMW3F3016_tailgateglass_GT", ["BMW3F3016_tailgate"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound10", "deformVolume":0.8}],
+         {"deformGroup":""},
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+         //--TAILGATE--
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"BMW3F3016_tailgate"},
+         {"nodeWeight":2.25},
+         ["t1r", -0.53500, 1.79344, 1.39534],
+         ["t1", 0.00000, 1.82344, 1.43534],
+         ["t1l", 0.53500, 1.79344, 1.39534],
+
+         ["t2rr", -0.58000, 1.85217, 1.38468],
+         ["t2ll", 0.58000, 1.85217, 1.38468],
+
+         ["t3rr", -0.60500, 2.22482, 1.09591],
+         {"selfCollision":false},
+         ["t3r", -0.32000, 2.27982, 1.10591],
+         ["t3", 0.00000, 2.29482, 1.11591],
+         ["t3l", 0.32000, 2.27982, 1.10591],
+         {"selfCollision":true},
+         ["t3ll", 0.60500, 2.22482, 1.09591],
+
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
+          //brittle rear glass
+          {"beamSpring":1201000,"beamDamp":100},
+          {"beamDeform":3600,"beamStrength":4000},
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"breakGroup":"tailgateglass"},
+          {"deformGroup":"tailgateglass_break", "deformationTriggerRatio":0.02},
+          {"deformLimitExpansion":""},
+          ["t1","t3"],
+          ["t1","t3r"],
+          ["t1","t3l"],
+          ["t2ll","t2rr"],
+          ["t2rr","t1l"],
+          ["t2ll","t1r"],
+          ["t2rr","t3ll"],
+          ["t2ll","t3rr"],
+          ["t3ll","t3rr"],
+          ["t1","t3rr"],
+          ["t1","t3ll"],
+          {"breakGroup":""},
+          {"deformGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+          {"deformLimitExpansion":1.1},
+    ],
+},
+}
